@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+<body>
+    <h3>functions</h3>
+    <p id="namedfunc"></p>
+    <p id="anonyfunc"></p>
+
+    <script>
+        //Named Functions
+        function myFunction() {
+            let c = "named function run successfully"
+            console.log("i am named function");
+            document.getElementById("namedfunc").innerHTML = c;
+        }
+
+        myFunction();
+
+        //Anonymous Function 
+        let greet = function(name) {
+            console.log(`Hello ${name}`);
+            document.getElementById("anonyfunc").innerHTML = ("Anonymous Func run successfully");
+        };
+
+        greet("Prabhakar Mishra");
+
+        //Arrow function 
+        let love = () => console.log("Hello Beby");
+        love();
+
+        //IIFE Function 
+        /* Immediately Invoked Function Expression (IIFE) Executed immediately after their creation used to create private scoped and avoid polluting the global namespace. */
+        (function (){
+            let str = "Good Evening";
+            console.log(str);
+        })();
+
+        //HOC Function
+        /* Functions that takes one or more functions as arguments or return a functions.
+        eg: map(), filter(), reduce()*/
+
+        let ary = [10, 20, 30, 33, 23, 45, 45];
+        let newAry = ary.map((element) => element + 10);
+        console.log(newAry);
+
+        //constructor function 
+        /*
+            Used as blueprints for creating objects with similar properties and methods they are invoked using the new keyword to create intances of objects.
+        */
+        function Person (name, place){
+            this.name = name;
+            this.place = place;
+        }
+        let user1 = new Person("Prabhakar Mishra", "Sector 22, Noida");
+        console.log(`Hello everyone this is ${user1.name}, and i am from ${user1.place}.`);
+
+        //
+    </script>
+</body>
+</html>
